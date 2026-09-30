@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PocketSmart AI | Smart Budget Assistant</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon">₹</div>
+
+            <div>
+                <h2>PocketSmart</h2>
+                <span>AI Budget Assistant</span>
+            </div>
+        </div>
+
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            AI Assistant Online
+        </div>
+
+    </nav>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="container">
+
+        <!-- HERO SECTION -->
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <span class="badge">
+                    ✨ AI-Powered Finance
+                </span>
+
+                <h1>
+                    Make smarter decisions
+                    <span>with your money.</span>
+                </h1>
+
+                <p>
+                    Enter your monthly income and expenses.
+                    PocketSmart AI will analyze your spending
+                    and provide personalized budgeting recommendations.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section class="dashboard">
+
+            <!-- LEFT SIDE: FORM -->
+
+            <div class="card input-card">
+
+                <div class="card-heading">
+
+                    <div class="heading-icon blue">
+                        💰
+                    </div>
+
+                    <div>
+                        <h2>Monthly Budget</h2>
+
+                        <p>
+                            Enter your financial details
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form action="/recommendation" method="post">
+
+
+                    <!-- INCOME -->
+
+                    <div class="form-group">
+
+                        <label for="income">
+                            Monthly Income
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="currency">₹</span>
+
+                            <input
+                                type="number"
+                                id="income"
+                                name="income"
+                                placeholder="30,000"
+                                min="0"
+                                step="0.01"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EXPENSES -->
+
+                    <div class="form-group">
+
+                        <label for="expenses">
+                            Monthly Expenses
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="currency">₹</span>
+
+                            <input
+                                type="number"
+                                id="expenses"
+                                name="expenses"
+                                placeholder="20,000"
+                                min="0"
+                                step="0.01"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CATEGORY -->
+
+                    <div class="form-group">
+
+                        <label for="category">
+                            Main Expense Category
+                        </label>
+
+                        <select
+                            id="category"
+                            name="category"
+                            required
+                        >
+
+                            <option value="" disabled selected>
+                                Select a category
+                            </option>
+
+                            <option value="Food">
+                                🍔 Food & Dining
+                            </option>
+
+                            <option value="Transport">
+                                🚗 Transportation
+                            </option>
+
+                            <option value="Shopping">
+                                🛍️ Shopping
+                            </option>
+
+                            <option value="Entertainment">
+                                🎬 Entertainment
+                            </option>
+
+                            <option value="Education">
+                                📚 Education
+                            </option>
+
+                            <option value="Bills">
+                                💡 Bills & Utilities
+                            </option>
+
+                            <option value="Healthcare">
+                                🏥 Healthcare
+                            </option>
+
+                            <option value="Other">
+                                📦 Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+
+                        <span>
+                            🤖
+                        </span>
+
+                        Get AI Recommendation
+
+                        <span class="arrow">
+                            →
+                        </span>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="right-column">
+
+
+                <!-- QUICK INFO -->
+
+                <div class="card info-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon green">
+                            💡
+                        </div>
+
+                        <div>
+                            <h2>How it works</h2>
+
+                            <p>
+                                Simple. Smart. Personalized.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="steps">
+
+                        <div class="step">
+
+                            <div class="step-number">
+                                1
+                            </div>
+
+                            <div>
+                                <h3>Enter your details</h3>
+
+                                <p>
+                                    Tell us your income and monthly spending.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="step">
+
+                            <div class="step-number">
+                                2
+                            </div>
+
+                            <div>
+                                <h3>AI analyzes your budget</h3>
+
+                                <p>
+                                    Gemini AI reviews your financial information.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="step">
+
+                            <div class="step-number">
+                                3
+                            </div>
+
+                            <div>
+                                <h3>Get recommendations</h3>
+
+                                <p>
+                                    Receive practical ways to save money.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AI FEATURES -->
+
+                <div class="card feature-card">
+
+                    <div class="feature-top">
+
+                        <div class="ai-icon">
+                            ✨
+                        </div>
+
+                        <div>
+
+                            <h2>Powered by AI</h2>
+
+                            <p>
+                                Smart financial insights
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature-list">
+
+                        <div>
+                            ✓ Spending analysis
+                        </div>
+
+                        <div>
+                            ✓ Savings suggestions
+                        </div>
+
+                        <div>
+                            ✓ Personalized tips
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RESULTS ================= -->
+
+        {% if recommendation %}
+
+        <section class="results-section">
+
+            <div class="result-header">
+
+                <div>
+
+                    <span class="badge green-badge">
+                        ✓ Analysis Complete
+                    </span>
+
+                    <h2>
+                        Your Financial Overview
+                    </h2>
+
+                    <p>
+                        Here's what PocketSmart AI found from your monthly budget.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- STAT CARDS -->
+
+            <div class="stats-grid">
+
+
+                <!-- INCOME -->
+
+                <div class="stat-card income-card">
+
+                    <div class="stat-icon">
+                        💵
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Monthly Income
+                        </span>
+
+                        <strong>
+                            ₹{{ "{:,.0f}".format(income) }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EXPENSE -->
+
+                <div class="stat-card expense-card">
+
+                    <div class="stat-icon">
+                        💳
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Monthly Expenses
+                        </span>
+
+                        <strong>
+                            ₹{{ "{:,.0f}".format(expenses) }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SAVINGS -->
+
+                <div class="stat-card savings-card">
+
+                    <div class="stat-icon">
+                        🏦
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Available Savings
+                        </span>
+
+                        <strong>
+                            ₹{{ "{:,.0f}".format(savings) }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SAVINGS PROGRESS -->
+
+            <div class="card progress-card">
+
+                <div class="progress-header">
+
+                    <div>
+
+                        <h3>
+                            Savings Rate
+                        </h3>
+
+                        <p>
+                            Percentage of your income left after expenses
+                        </p>
+
+                    </div>
+
+                    <strong>
+
+                        {% if income > 0 %}
+                            {{ ((savings / income) * 100)|round(1) }}%
+                        {% else %}
+                            0%
+                        {% endif %}
+
+                    </strong>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div
+                        class="progress-fill"
+                        style="width:
+                        {% if income > 0 %}
+                            {{ ((savings / income) * 100)|round(1) }}
+                        {% else %}
+                            0
+                        {% endif %}%"
+                    >
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- AI RECOMMENDATION -->
+
+            <div class="card recommendation-card">
+
+                <div class="recommendation-header">
+
+                    <div class="ai-big-icon">
+                        🤖
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            PocketSmart AI Recommendation
+                        </h2>
+
+                        <p>
+                            Personalized analysis based on your information
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="recommendation-content">
+
+                    {{ recommendation }}
+
+                </div>
+
+            </div>
+
+
+            <!-- INPUT SUMMARY -->
+
+            <div class="card summary-card">
+
+                <h3>
+                    📋 Your Input Summary
+                </h3>
+
+                <div class="summary-grid">
+
+                    <div>
+
+                        <span>
+                            Main Expense Category
+                        </span>
+
+                        <strong>
+                            {{ category }}
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Income
+                        </span>
+
+                        <strong>
+                            ₹{{ "{:,.0f}".format(income) }}
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Expenses
+                        </span>
+
+                        <strong>
+                            ₹{{ "{:,.0f}".format(expenses) }}
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Remaining
+                        </span>
+
+                        <strong class="green-text">
+                            ₹{{ "{:,.0f}".format(savings) }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NEW ANALYSIS BUTTON -->
+
+            <div class="new-analysis">
+
+                <a href="/" class="secondary-button">
+                    ← Create New Budget Analysis
+                </a>
+
+            </div>
+
+        </section>
+
+        {% endif %}
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 PocketSmart AI
+        </p>
+
+        <span>
+            Smart budgeting powered by Gemini AI
+        </span>
+
+    </footer>
+
+</body>
+
+</html>
